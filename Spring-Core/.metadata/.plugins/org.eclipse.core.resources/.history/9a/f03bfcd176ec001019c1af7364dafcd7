@@ -1,0 +1,17 @@
+package com.rays.ioc;
+
+public class inventory {
+	
+	private int stock;
+	
+	public inventory() {
+		
+	}
+	
+	public inventory(int stock) {
+		this.stock = stock;
+		
+	}
+	
+
+}

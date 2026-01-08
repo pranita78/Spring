@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="person" class="com.rays.test.Person">
+	<!--<bean id="person" class="com.rays.test.Person">
 		<property name="name" value="Shyam"></property> 
 		<property name="address" value="Indore"></property> 
 	</bean>
@@ -12,6 +12,12 @@
 	<bean id="person1" class="com.rays.test.Person">
 		<property name="name" value="Ram"></property> 
 		<property name="address" value="Bhopal"></property> 
+	</bean>-->
+	
+	<!-- Person person = new Person("Pranita", "indore") -->
+	<bean id="person" class="com.rays.test.Person">
+	<constructor-arg value="Pranita"></constructor-arg> <!-- -name -->
+	<constructor-arg value="indore"></constructor-arg><!--address-->
 	</bean>
 
 </beans>

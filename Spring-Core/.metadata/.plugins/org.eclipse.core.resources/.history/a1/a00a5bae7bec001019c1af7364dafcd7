@@ -1,0 +1,12 @@
+package com.rays.ioc;
+
+public class Order {
+	
+	private Payment payment;
+	private Inventory inventory;
+
+	public Order(Payment payment, Inventory inventory) {
+		this.payment = payment;
+		this.inventory = inventory;
+		}
+}

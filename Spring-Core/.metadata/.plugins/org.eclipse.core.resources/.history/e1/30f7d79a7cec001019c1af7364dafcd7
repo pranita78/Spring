@@ -1,0 +1,14 @@
+package com.rays.ioc;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+
+public class TestOrder1 {
+	
+	public static void main(String[]args) {
+		
+	BeanFactory	factory = new XmlBeanFactory(new classPathResource("Order.xml"));
+		
+	}
+
+}
