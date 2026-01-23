@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ page isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,20 +11,24 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%@ include file="Header.jsp"%>
+	<div align="center">
+		<h1>Add User</h1>
+		
+		<c:if test="${not empty success}">
+		<p style="color: green; font-weight: bold;">
+			${success}
+		</p>
+	</c:if>
 
-<%@include file = "Header.jsp" %>
-<div align =center>  
-  
-  <h1>Add User</h1>
-  
-  <sf:form method="post" modelAttribute ="form"> 
-   <table>
-   <tr>
-   <th align="left">First Name :</th>
-	<td><sf:input path="firstName" /></td>
-   </tr>
-	<tr>
-	<th align="left">Last Name :</th>
+		<sf:form method="post" modelAttribute="form">
+			<table>
+				<tr>
+					<th align="left">First Name :</th>
+					<td><sf:input path="firstName" /></td>
+				</tr>
+				<tr>
+					<th align="left">Last Name :</th>
 					<td><sf:input path="lastName" /></td>
 				</tr>
 				<tr>
@@ -43,10 +51,9 @@
 					<th></th>
 					<td><input type="submit" name="operation" value="save"></td>
 				</tr>
-   </table>
-  </sf:form>
-  
-</div>
+			</table>
+		</sf:form>
 
+	</div>
 </body>
 </html>

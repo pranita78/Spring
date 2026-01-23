@@ -29,7 +29,7 @@ public class UserCtl {
 	}
 
 	@PostMapping
-	public String submit(@ModelAttribute("form") UserForm form) throws Exception {
+	public String submit(@ModelAttribute("form") UserForm form, Model model) throws Exception {
 
 		UserDTO dto = new UserDTO();
 		dto.setId(form.getId());
@@ -42,8 +42,10 @@ public class UserCtl {
 
 		if (form.getId() > 0) {
 			service.update(dto);
+			model.addAttribute("sucess", "User Updated Sucessfully ");
 		} else {
 			service.add(dto);
+			model.addAttribute("sucess", "User Added Sucessfully ");
 		}
 		return "UserView";
 	}
