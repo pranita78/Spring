@@ -17,8 +17,10 @@ public class DataUtility {
 	}
 
 	public static String dateToString(Date value) {
-
-		return sdf.format(value);
-
+		
+		if (value!= null) { 
+      return sdf.format(value);
+		}
+		return""; //empty string Jsp k liye safe
 	}
 }
